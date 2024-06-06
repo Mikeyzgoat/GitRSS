@@ -8,7 +8,9 @@ import {
 } from "discord.js";
 
 DISCORD_KEY = process.env.API_KEY
-console.log(DISCORD_KEY)
+URL = process.env.GITHUB_RSS_FEED
+
+const client = new Client();
 
 const commands = [
     {
@@ -41,3 +43,8 @@ const commands = [
     }
 ];
 
+client.on('ready',()=>{
+    console.log("Successfully logged in!")
+});
+
+client.login(DISCORD_KEY)
